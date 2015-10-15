@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Drowsiness-monitoring-system by fabiocasagrande</title>
+    <style type="text/css">
+	.auto-style1 {
+		margin-left: 0px;
+	}
+	.auto-style2 {
+		margin-right: 0;
+	}
+	.auto-style3 {
+		text-align: center;
+		text-decoration: underline;
+		font-size: xx-large;
+	}
+	.auto-style4 {
+		text-decoration: underline;
+	}
+	.auto-style5 {
+		text-align: center;
+	}
+	</style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1 class="auto-style5">Drowsiness Monitoring System</h1>
+          <h2 class="auto-style5">Drowsinees Monitoring System using Arduino microcontrollers,an Android Tablet,and a 4D Systems LCD Display</h2>
+
+        
+        </header>
+
+        <hr class="auto-style1">
+
+        <section id="main_content">
+            
+            
+      <h3>
+			&nbsp;</h3>
+			<h3>
+			<img alt="one" height="379" src="images/picture.png" width="446" style="margin-left:100px"></h3>
+			
+			<h3>
+			&nbsp;</h3>
+			
+			
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/9ML3N51ln9o" style="margin-left:20px"></iframe>
+			
+			
+			
+			<h3>
+			&nbsp;</h3>
+			<h3>
+			&nbsp;</h3>
+			<h3>
+			Drowsiness Monitoring System using Arduino microcontrollers,an Android Tablet,and a 4D Systems LCD Display.</h3>
+
+
+</p>
+			<p>The purpose of this project was to create a system that allows the user to safely drive while being monitored. This system would track the driver s eyes in real time and if he or she falls asleep, the system would turn up the volume of the radio and slow down the car until it stops.<br>
+</p>
+
+<h3>
+System Design</h3>
+			<p>
+			<img alt="system" height="496" src="images/graphs/systemWhole.png" width="615"></p>
+
+			<p class="MsoNormal">The Android Tablet is connected to the Arduino 
+			Master through Bluetooth connection. The Arduino Master takes 
+			actions on the Arduino Slave and the LCD Display System according on 
+			the data received from the Android Tablet. On the Arduino Slave is 
+			mounted a printed circuit that<span> simulates the car functions 
+			while the LCD Display System displays the states.</span></p>
+			<p>Schematics Serial Connections:</p>
+			<p>
+			<img alt="connections" height="477" src="images/Schematics/System%20Hardware%20Arduino%20Serial%20Connections-page-002.jpg" width="612"></p>
+
+			<h3>
+			&nbsp;</h3>
+			<h3>
+			Car Simulator (Arduino Slave)</h3>
+			<p>
+			<img alt="carSim" height="377" src="images/Schematics/Arduino%20Car%20Simulator.jpg" width="599"></p>
+
+			<p class="MsoNormal"><span>The car simulator is mainly composed by 
+			five LEDs and two 7-segment digital displays.&nbsp; On the bottom 
+			left side, there are three LEDs, the -Radio Volume Down-, the -Alarm 
+			On- and the -Radio Volume Up-. Located at the center of the board, 
+			there are two 7-segment digital displays that show the speed of the 
+			car. In the center upper part, there are two LEDs that simulate the 
+			four hazard lights of the car.</span><b><u><span></span></u></b></p>
+			<p>Schematics:</p>
+			<p>
+			<img alt="imsc" height="489" src="images/Schematics/Arduino%20Car%20Simulator-%20Hardware%20and%20Schematics-page-002.jpg" width="622"></p>
+
+<h3>
+&nbsp;</h3>
+			<h3>
+			LCD Display Arduino 4D System 4.3</h3>
+			<p>
+			<img alt="states" height="408" src="images/Schematics/states%20lcd.jpg" width="613"></p>
+			<p class="MsoNormal"><span>Both the Arduino Master and the Arduino 
+			Slave controls the LCD Display. The LCD Display, according to the 
+			Data coming in from the Arduinos, will change the states to display.&nbsp; 
+			&nbsp;<o:p></o:p></span></p>
+			<p>Schematics:</p>
+			<p>
+			<img alt="edg" class="auto-style2" height="476" src="images/Schematics/ksdk.jpg" width="613"></p>
+			<h3>
+			&nbsp;</h3>
+			<h3 class="auto-style3">
+			Diagrams </h3>
+			<h3>
+			System Design:</h3>
+			<p>
+			<img alt="df" height="651" src="images/graphs/system.png" width="611"></p>
+			<p class="MsoNormal"><span>The brain of the system is the Android 
+			Tablet. The driver is monitored with the built-in camera of the 
+			Tablet through an Open Source app. The app tracks the eyes of the 
+			driver and, at the same time, sends signals to the Arduino 
+			microcontroller. The real time eye tracking is also shown on the 
+			screen of the Tablet. The Tablet communication with the Arduino is 
+			through Bluetooth. According to the signal received from the Tablet, 
+			the Arduino (master) has two decisions to take. If the signal says 
+			that the eyes are not tracked, the Arduino (Master) activates the 
+			Arduino (Slave). The main task of the Arduino (slave), once 
+			activated, is to start a series of operations that will result in 
+			stopping of the car only if the driver s eyes have not been detected 
+			in a certain amount of time. The Arduino (Slave) is active only when 
+			the eyes are not tracked from the software. On the other hand, if 
+			the Arduino (master) receives the signal which says that the eyes 
+			have been detected nothing happens. If in the previous state, the 
+			eyes were not detected and now they are detected, the Arduino 
+			(Master) will turn off the alerts. Each states will also be 
+			displayed on the LCD Display.<o:p></o:p></span></p>
+
+			<p class="MsoNormal">&nbsp;</p>
+			<h3>
+			Android Tablet App:</h3>
+			<p>
+			<img alt="ol" height="370" src="images/graphs/app.png" width="604"></p>
+			<p class="MsoNormal"><span>When you first open the Android Tablet 
+			App, the app automatically connects the tablet to the Bluetooth 
+			receiver installed on the Arduino (Master). Once the connection is 
+			established, the app starts the eye monitoring and communicates with 
+			the Arduino microcontroller. <o:p></o:p></span></p>
+			<h3>
+			Eye Detection Case</h3>
+			<p>
+			<img alt="ggk" height="539" src="images/graphs/eyeTracked.png" width="613"></p>
+			<p>
+			T<span>he data coming from the built-in camera will be analyzed from 
+			the app stored inside the Android Tablet. In this case, the eye is 
+			detected from the camera and the system will then have to make a 
+			decision. If the alert in the previous state was on, the system will 
+			then change the state of the alarm to off, turn off the hazard 
+			lights, and turn the radio off. Otherwise, if the alarm in the 
+			previews state was off, the system then will not take any actions on 
+			the car.</span></p>
+			<p>
+			&nbsp;</p>
+			<h3>
+			No Eye Detection Case</h3>
+			<p>
+			<img alt="ge" height="390" src="images/graphs/NoEyeTracked.png" width="604"></p>
+			<p class="MsoNormal">W<span>e can represent the -No Eye Detection 
+			Case- in three phases. In the first phase, the App, through the 
+			built-in camera, does not detect any eyes. The real time eye 
+			tracking will still display the video on the Tablet but with no eye 
+			tracked. In the second phase, the App sends an alert signal to the 
+			Arduino (Master) which it will sends that signal to the Arduino 
+			(Slave). The Arduino (Slave) will start the alert on. From the 
+			moment that the alert is on, a countdown will start and it will take 
+			4 seconds until the car stops. If in the meanwhile the eyes get 
+			detected, the countdown will stop and the alert will go off.<o:p></o:p></span></p>
+			<h3>
+			&nbsp;</h3>
+			<h3>
+			References</h3>
+			<p class="auto-style4">
+			Arduino Open Source:</p>
+			<ul>
+				<li><a href="http://arduino.cc/">
+				http://arduino.cc/</a></li>
+			</ul>
+			<p class="auto-style4">4D Systems 4.3 VisiGenie Software:</p>
+			<ul>
+				<li>
+				<a href="http://www.4dsystems.com.au/product/uLCD_43/">
+				http://www.4dsystems.com.au/product/uLCD_43/</a></li>
+			</ul>
+			<p class="auto-style4">
+			Android Eye Tracking app:</p>
+			<ul>
+				<li>OpenC<span>V:&nbsp; <a href="http://opencv.org">
+				http://opencv.org</a></span></li>
+				<li>Roman Hosek modified version of OpenCV:
+				<a href="http://romanhosek.cz/android-eye-detection-and-tracking-with-opencv/">
+				<br>
+				http://romanhosek.cz/android-eye-detection-and-tracking-with-opencv/</a>&nbsp;&nbsp; 
+				(I made my own adjustment by adding few lines of code in the 
+				FdActivity.java file that 
+				allowed me to connect the android tablet to the arduino through 
+				bluetooth connection) In the Project.rar link, you can download the 
+				whole project. For the Android app, you hav to go on the folder 
+				called -Android- and then import on the sdk the folder 
+				--OpenCV-2.4.6-android-sdk--. The app is called - tutorial1-. 
+				You will havo also add a path for the NDK in your 
+				project,otherwise it will not run. Here is the link for the NDK:<a href="https://developer.android.com/tools/sdk/ndk/index.html"><br>
+				https://developer.android.com/tools/sdk/ndk/index.html</a></li>
+			</ul>
+        </section>
+
+       
+
+        
+      </div>
+    </div>
+  </body>
+</html>
