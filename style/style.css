@@ -1,0 +1,114 @@
+.line{
+	/* The dividing line: */
+	height:1px;
+	background-color:#ffffff;
+	border-bottom:1px solid #416371;
+	margin:1em 0;
+	overflow:hidden;
+}
+
+/* H3 headers style*/
+ h3{
+	font-family:forte,"Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+	font-size:2em;
+	font-weight:normal;
+	color:#ffffff;
+	margin:0 0 1em;
+}
+/* H3 headers style*/
+ h4{
+	font-size:1em;
+	font-weight:normal;
+	color:#ffffff;
+	margin:0 0 1em;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+
+#sidebarRight {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 20%;
+    background-color:#1cb2e9;
+
+}
+#sidebarLeft {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 20%;
+   background-color:#1cb2e9;
+}
+
+
+#centerbar{
+    
+    margin-left: 20%;
+	margin-right: 20%;
+    
+}
+
+ #frame{
+	
+	position:fixed;
+	width:60%;
+	height:100%; 
+	overflow:auto;
+	display:none;
+	
+ }
+ 
+  #frame1{
+	
+	position:fixed;
+	width:60%;
+	height:100%; 
+	overflow:auto;
+	display:none;
+ }
+    
+  #frame2{
+	
+	position:fixed;
+	width:60%;
+	height:100%; 
+	overflow:auto;
+	display:none;
+ }
+    #frame3{
+	
+	position:fixed;
+	width:60%;
+	height:100%; 
+	overflow:auto;
+	display:none;
+ } 
+  
+  
+ 
+  #menu{
+	 text-align:center;
+	 margin-top:80%;
+	
+ }
+ #header1, #portfolio,#copy{
+	 text-align:center;
+	
+ }
+ #fabio{
+	 text-align:center;
+	  margin-top:60%;
+ }
+ 
+ 
+#tab1,#tab2{
+	background-color:#e8e8e8;
+	
+}
