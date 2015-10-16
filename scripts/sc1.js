@@ -12,8 +12,8 @@ $(document).ready(function(){
 	
 	
 	sc1.addTab(sc1.id_p2,sc1.title_p2,sc1.tab1_p2,sc1.tab2_p2);
-    sc1.addProject(sc1.id_p1,sc1.title_p1,sc1.para_p1,sc1.pic_p1,sc1.detail_p1,sc1.repo_p1,1);
-	sc1.addProject(sc1.id_p3,sc1.title_p3,sc1.para_p3,sc1.pic_p3,sc1.detail_p3,sc1.repo_p3,1);
+    sc1.addProject(sc1.id_p1,sc1.title_p1,sc1.para_p1,sc1.pic_p1,sc1.detail_p1,sc1.repo_p1,0);
+	sc1.addProject(sc1.id_p3,sc1.title_p3,sc1.para_p3,sc1.pic_p3,sc1.detail_p3,sc1.repo_p3,0);
 	sc1.addProject(sc1.id_p4,sc1.title_p4,sc1.para_p4,sc1.pic_p4,sc1.detail_p4,sc1.repo_p4,0);
 	
 });
@@ -32,13 +32,13 @@ var sc1={
 	para_p2_1:"Javascript,Html,Css project add on for \"Smart Sparrow\".The program auto generates questions on pairs and tuples. The user must answer 5 questions right in order to complete the exercise.<br><br> My contribution to this project was to create a generator of random questions. In the js file app/scripts/questionbankmodel.js I wrote the following methods:<br> <br>  createQuestionA(), <br> createQuestionB(), <br> getRandomValue(),<br> getRandomValues(maxLength),<br> getListValues(),<br> getSubList(str,numero). ",
 	pic_p2_1:"img/pairs.png",
 	repo_p2_1:"https://github.com/fabiocasagrande/Pairs-and-Other-Tuples-Review",
-	detail_p2_1:"frame",
+	detail_p2_1:"https://rawgit.com/fabiocasagrande/Pairs-and-Other-Tuples-Review/master/index.html",
 	
 	
 	para_p2_2:"Javascript,Html,Css project add on for \"Smart Sparrow\". The program auto generates graphs. The user must answer 5 set of 5 questions each right in order to complete the exercise.<br><br> My contribution to this project was to create a generator of random graphs.  I created all the files in the folder app/scripts/graphScripts/ which are the following: <br><br> circle.js,<br>line.js<br>square.js<br>graphGenerator.js . ",
 	pic_p2_2:"img/constraint.png",
 	repo_p2_2:"https://github.com/fabiocasagrande/Constraint-Graphs",
-	detail_p2_2:"frame1",
+	detail_p2_2:"https://rawgit.com/fabiocasagrande/Constraint-Graphs/master/index.html",
 	
 	
 	
@@ -48,7 +48,7 @@ var sc1={
 	para_p1:"This project is a component based application, which means that existing programs have been used and customized according to this project’s requirements. I based this project mainly on two programs available to download on Microsoft Windows SDK 1.8: <br><br> Control Basics <br><br> Avateering XNA <br><br> To build an interactive menu I used the Control Basics application which is a basic example on how to create a custom menu. Regarding the gameplay, I used the Avateering XNA application which was an example that showed a user body tracked avatar. Therefore, after I had these two components, my sole focus was to code and customize these two applications in order to create the NYIT application. ",
 	pic_p1:"img/nyit.png",
 	repo_p1:"https://github.com/fabiocasagrande/Research_Project_Microsoft_Kinect_SDK1.8",
-	detail_p1:"frame3",
+	detail_p1:"microsoft/indexMs.html",
 	
 	
 	id_p3:"#project3",
@@ -56,7 +56,7 @@ var sc1={
 	para_p3: "Drowsiness Monitoring System using Arduino microcontrollers,an Android Tablet,and a 4D Systems LCD Display <br><br> This is a project I did in my Senior Design class.<br><br>The purpose of this project was to create a system that allows the user to safely drive while being monitored. This system would track the driver’s eyes in real time and if he or she falls asleep, the system would turn up the volume of the radio and slow down the car until it stops.",
 	pic_p3:"drowsiness/images/picture.png",
 	repo_p3:"https://github.com/fabiocasagrande/Drowsiness-Monitoring-System",
-	detail_p3:"frame2",
+	detail_p3:"drowsiness/index.html",
 	
 	
 	
@@ -76,7 +76,7 @@ sc1.addTab =function(id,title,tab1,tab2){
 	$(id).append("<h2>"+title+"</h2> <div class= \" line \"></div> <div class= \"articleBody clear \"></div>");
 	$(id).append("<button id=\"tab1\" onclick=\"sc1.addContentTab1()\">"+tab1+"</button> <button id=\"tab2\" onclick=\"sc1.addContentTab2()\">"+tab2+"</button> <div class=\"line\"></div> <div id=\"s\"></div>");
 	sc1.changeColor("tab1");
-	sc1.addProjectToTab(sc1.cont,sc1.tab1_p2,sc1.para_p2_1,sc1.pic_p2_1,sc1.detail_p2_1,sc1.repo_p2_1,1);
+	sc1.addProjectToTab(sc1.cont,sc1.tab1_p2,sc1.para_p2_1,sc1.pic_p2_1,sc1.detail_p2_1,sc1.repo_p2_1,0);
 	
 	
 }
@@ -86,7 +86,7 @@ sc1.addContentTab1 = function(){
 
 	$(sc1.cont).empty();
 	sc1.changeColor("tab1");
-	sc1.addProjectToTab(sc1.cont,sc1.tab1_p2,sc1.para_p2_1,sc1.pic_p2_1,sc1.detail_p2_1,sc1.repo_p2_1,1);
+	sc1.addProjectToTab(sc1.cont,sc1.tab1_p2,sc1.para_p2_1,sc1.pic_p2_1,sc1.detail_p2_1,sc1.repo_p2_1,0);
 }
 
 
@@ -95,7 +95,7 @@ sc1.addContentTab1 = function(){
 sc1.addContentTab2 = function(){
 	$(sc1.cont).empty();
 	sc1.changeColor("tab2");
-	sc1.addProjectToTab(sc1.cont,sc1.tab2_p2,sc1.para_p2_2,sc1.pic_p2_2,sc1.detail_p2_2,sc1.repo_p2_2,1);
+	sc1.addProjectToTab(sc1.cont,sc1.tab2_p2,sc1.para_p2_2,sc1.pic_p2_2,sc1.detail_p2_2,sc1.repo_p2_2,0);
 }
 
 
